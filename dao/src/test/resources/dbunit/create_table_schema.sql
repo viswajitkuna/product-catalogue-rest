@@ -1,0 +1,1 @@
+CREATE TABLE product (id INT PRIMARY KEY, NAME VARCHAR(255), description VARCHAR(255), quantity INT, price DOUBLE);
