@@ -69,6 +69,12 @@ public class Product implements Serializable {
         this.price = price;
     }
 
+    public Product(long id, String name, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

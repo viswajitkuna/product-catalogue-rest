@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +36,9 @@ public class ProductCatalogueServiceImpl implements ProductCatalogueService {
     @Override
     public ProductDetails getProduct(long id) {
         Product product = productDao.getProduct(id);
+        if (product == null) {
+            throw new EntityNotFoundException("No product exists with id: " + id);
+        }
         return new ProductDetails(product.getId(), product.getName(), product.getDescription(), product.getQuantity(),
                 product.getPrice());
     }
