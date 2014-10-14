@@ -6,6 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -36,11 +37,14 @@ public class ProductDaoTest {
 
     private Product product;
 
+    private static final int INITIAL_QUANTITY = 30;
+
+    @Before
     public void setUp() {
         products = new ArrayList<Product>();
-        product = new Product(1, "Samsung TV", 30);
+        product = new Product(1, "Samsung TV", INITIAL_QUANTITY);
         products.add(product);
-        products.add(new Product(2, "Sony TV", 30));
+        products.add(new Product(2, "Sony TV", INITIAL_QUANTITY));
         when(entityManager.createQuery(anyString())).thenReturn(query);
         when(query.getResultList()).thenReturn(products);
         when(query.getSingleResult()).thenReturn(product);
@@ -66,6 +70,6 @@ public class ProductDaoTest {
         Product currentProduct = productDao.purchaseProduct(1, 2);
         assertThat(currentProduct, notNullValue());
         assertThat(currentProduct.getName(), is(product.getName()));
-        assertThat(currentProduct.getQuantity(), is(product.getQuantity()));
+        assertThat(currentProduct.getQuantity(), is(INITIAL_QUANTITY - 2));
     }
 }
