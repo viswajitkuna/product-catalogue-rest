@@ -18,6 +18,12 @@ public class ProductDetails implements Serializable {
 
     public ProductDetails() {}
 
+    public ProductDetails(long id, String name, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+    }
+
     public ProductDetails(long id, String name, String description, int quantity, double price) {
         this.id = id;
         this.name = name;

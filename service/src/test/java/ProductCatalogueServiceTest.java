@@ -33,10 +33,9 @@ public class ProductCatalogueServiceTest {
     @Before
     public void setUp() {
         product = new Product(1, "Samsung TV", 30);
-        Product product2 = new Product(2, "Sony TV", 30);
         List<Product> products = new ArrayList<Product>();
         products.add(product);
-        products.add(product2);
+        products.add(new Product(2, "Sony TV", 30));
         when(productDao.getAllProducts()).thenReturn(products);
         when(productDao.getProduct(1)).thenReturn(product);
         when(productDao.purchaseProduct(1, 2)).thenReturn(product);
