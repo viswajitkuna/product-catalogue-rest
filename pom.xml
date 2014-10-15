@@ -12,6 +12,7 @@
         <module>dao</module>
         <module>rest</module>
         <module>service</module>
+        <module>client</module>
     </modules>
 
     <properties>
@@ -30,6 +31,11 @@
             <dependency>
                 <groupId>product-catalogue</groupId>
                 <artifactId>dao</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>product-catalogue-rest</groupId>
+                <artifactId>rest</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
