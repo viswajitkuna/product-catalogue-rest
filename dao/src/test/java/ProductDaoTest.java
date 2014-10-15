@@ -2,8 +2,8 @@ import com.sample.dao.domain.Product;
 import com.sample.dao.impl.ProductDaoImpl;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
-
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 import org.junit.Before;

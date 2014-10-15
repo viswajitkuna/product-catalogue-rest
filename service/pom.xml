@@ -23,8 +23,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>product-catalogue-rest</groupId>
-            <artifactId>dao</artifactId>
+            <groupId>product-catalogue</groupId>
+            <artifactId>dal</artifactId>
             <type>test-jar</type>
             <scope>test</scope>
             <version>${project.version}</version>

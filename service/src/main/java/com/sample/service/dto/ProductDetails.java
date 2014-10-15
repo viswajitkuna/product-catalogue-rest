@@ -26,42 +26,92 @@ public class ProductDetails implements Serializable {
         this.price = price;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return Value of id.
+     */
     public long getId() {
         return id;
     }
 
+    /**
+     * Sets new id.
+     *
+     * @param id New value of id.
+     */
     public void setId(long id) {
         this.id = id;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return Value of name.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets new name.
+     *
+     * @param name New value of name.
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Gets description.
+     *
+     * @return Value of description.
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Sets new description.
+     *
+     * @param description New value of description.
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * Gets quantity.
+     *
+     * @return Value of quantity.
+     */
     public int getQuantity() {
         return quantity;
     }
 
+    /**
+     * Sets new quantity.
+     *
+     * @param quantity New value of quantity.
+     */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
+    /**
+     * Gets price.
+     *
+     * @return Value of price.
+     */
     public double getPrice() {
         return price;
     }
 
+    /**
+     * Sets new price.
+     *
+     * @param price New value of price.
+     */
     public void setPrice(double price) {
         this.price = price;
     }

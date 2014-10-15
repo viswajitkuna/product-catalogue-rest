@@ -12,16 +12,27 @@ import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Implementation of {@link com.sample.service.ProductCatalogueService}
+ */
 @Transactional
 public class ProductCatalogueServiceImpl implements ProductCatalogueService {
 
     private ProductDao productDao;
 
+    /**
+     * Sets new productDao.
+     *
+     * @param productDao New value of productDao.
+     */
     @Required
     public void setProductDao(ProductDao productDao) {
         this.productDao = productDao;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<ProductDetails> getAllProducts() {
         List<ProductDetails> productDetails = new ArrayList<ProductDetails>();
@@ -33,6 +44,9 @@ public class ProductCatalogueServiceImpl implements ProductCatalogueService {
         return productDetails;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ProductDetails getProduct(long id) {
         Product product = productDao.getProduct(id);
@@ -43,6 +57,9 @@ public class ProductCatalogueServiceImpl implements ProductCatalogueService {
                 product.getPrice());
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public ProductDetails purchaseProduct(long id, int quantity) {
         Product product = productDao.purchaseProduct(id, quantity);
