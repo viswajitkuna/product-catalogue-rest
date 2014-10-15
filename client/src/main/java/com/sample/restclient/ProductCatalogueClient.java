@@ -35,14 +35,15 @@ public class ProductCatalogueClient {
      */
     private static void invokeGetAllProducts(){
         RestTemplate restTemplate = new RestTemplate();
-        List<LinkedHashMap> productDetailsList = restTemplate.getForObject(GET_ALL_PRODUCTS_REST_URI, List.class);
-        for(LinkedHashMap productDetails : productDetailsList) {
+        List productDetailsList = restTemplate.getForObject(GET_ALL_PRODUCTS_REST_URI, List.class);
+/*        for(LinkedHashMap productDetails : productDetailsList) {
             System.out.println("Product Id: " + productDetails.get("id")
-                    + "Product Name: " + productDetails.get("name")
-                    + "Product Description: " + productDetails.get("description")
-                    + "Quantity: " + productDetails.get("quantity")
-                    + "Price: " + productDetails.get("price"));
-        }
+                    + "\n Product Name: " + productDetails.get("name")
+                    + "\n Product Description: " + productDetails.get("description")
+                    + "\n Quantity: " + productDetails.get("quantity")
+                    + "\n Price: " + productDetails.get("price"));
+        }*/
+        System.out.println(productDetailsList);
     }
 
     /*
@@ -59,7 +60,7 @@ public class ProductCatalogueClient {
      */
     private static void invokePurchaseProduct() {
         RestTemplate restTemplate = new RestTemplate();
-        ProductDetails productDetails = restTemplate.getForObject(PURCHASE_PRODUCT_REST_URI, ProductDetails.class);
+        ProductDetails productDetails = restTemplate.postForObject(PURCHASE_PRODUCT_REST_URI, null, ProductDetails.class);
         printProductDetails(productDetails);
     }
 
@@ -68,9 +69,9 @@ public class ProductCatalogueClient {
      */
     private static void printProductDetails(ProductDetails productDetails) {
         System.out.println("Product Id: " + productDetails.getId()
-                            + "Product Name: " + productDetails.getName()
-                            + "Product Description: " + productDetails.getDescription()
-                            + "Quantity: " + productDetails.getQuantity()
-                            + "Price: " + productDetails.getPrice());
+                            + "\n Product Name: " + productDetails.getName()
+                            + "\n Product Description: " + productDetails.getDescription()
+                            + "\n Quantity: " + productDetails.getQuantity()
+                            + "\n Price: " + productDetails.getPrice());
     }
 }

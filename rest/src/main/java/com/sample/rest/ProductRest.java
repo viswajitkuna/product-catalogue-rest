@@ -42,9 +42,8 @@ public interface ProductRest {
      * @param quantity Quantity of the current product that has been purchased
      * @return {@link com.sample.service.dto.ProductDetails} corresponding to the id being passed
      */
-    @PUT
+    @POST
     @Path("{id}/{quantity}")
     @Produces({MediaType.APPLICATION_XML})
     ProductDetails purchaseProduct(@PathParam("id") long id, @PathParam("quantity") int quantity);
-
 }
