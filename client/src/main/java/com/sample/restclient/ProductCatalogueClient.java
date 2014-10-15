@@ -60,7 +60,8 @@ public class ProductCatalogueClient {
      */
     private static void invokePurchaseProduct() {
         RestTemplate restTemplate = new RestTemplate();
-        ProductDetails productDetails = restTemplate.postForObject(PURCHASE_PRODUCT_REST_URI, null, ProductDetails.class);
+        restTemplate.put(PURCHASE_PRODUCT_REST_URI, null, ProductDetails.class);
+        ProductDetails productDetails = restTemplate.getForObject(GET_PRODUCT_REST_URI, ProductDetails.class);
         printProductDetails(productDetails);
     }
 
